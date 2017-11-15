@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> eCommerce website </title>
+
+        <style> 
+        </style>
+
+        <script> 
+        /*
+        Holly White 
+        10/31/17
+        */
+
+
+        //global varables 
+        var pr1= 5, ws1= 3;
+        var pr2= 10, ws2= 6;
+        var pr3= 15, ws3= 9;
+
+
+        
+   
+
+        function processOrder(){
+
+            var qty1 = parseFloat( document.getElementById("qty1").value );
+            var qty2 = parseFloat( document.getElementById("qty1").value );
+            var qty3 = parseFloat( document.getElementById("qty1").value );
+
+            var subtotal = (pr1*qty1)+(pr2*qty2)+(pr3*qty3);
+            var companyPrice = (ws1*qty1)+(ws2*qty2)+(ws3*qty3);
+            var profit = (subtotal - companyPrice);
+            var tax = (subtotal*0.0876);
+            var shipping;
+            
+            if (subtotal  <= 100){
+                shipping= 25;
+            }
+            else if (avg >=100 && avg<=200){
+                shipping= 10;
+            }else {
+                shipping= 0 
+            }
+
+            total = subtotal + tax + shipping;
+
+            var op = document.getElementById("output");
+
+            var build= "";
+            build += "CUSTOMORE INFORMATON";
+            build += "<br>"
+            build += "subtotal: " + subtotal; 
+            build += "<br>"; 
+            build += "tax: " + tax;
+            build += "<br>";
+            build += "shipping:" + shipping; 
+            build += "<br>";
+            build += "total: " +  total;
+            build += "<br>";
+            build += "COMPANY INFORMATION";
+            build += "<br>"
+            build += "company subtotal:" + companyPrice;
+            build += "<br>" 
+            build += "customer subtotal:" + subtotal; 
+            build +=  "<br>";
+            build += "profit: " + profit;
+            
+            op.innerHTML = build; 
+
+
+
+
+        }
+
+    
+
+        </script> 
+    </head>
+    <body>
+        <h1> SHOE STORE </h1>
+        <!-- item 1 -->
+        <div>
+            <img src= "$20van.jpg"> <br>
+            <span> price $5 x... </span><input type= "text" id= "qty1" placeholder= "enter #">
+        </div>
+        <!-- item 2 -->
+        <div>
+            <img src= "$30van.jpg"> <br>
+            <span> price $10 x... </span><input type= "text" id= "qty2" placeholder= "enter #">
+        </div>
+        <!-- item 3 -->
+        <div>
+            <img src= "$40van.jpg"> <br>
+            <span> price $15 x... </span><input type= "text" id= "qty3" placeholder= "enter #">
+        </div>
+        <!-- payment -->
+        <button onclick= "processOrder()"> Process Order </button>
+        <br>
+        <div id ="output"> </div>
+  
+    </body>
+ 
+
+
+</html>
+
+
+   
+    
+    
+    
+        
